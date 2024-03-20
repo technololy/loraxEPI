@@ -1,9 +1,11 @@
 # Interview Tasks
+The source repository hosting this test is read-only.  
+Before you begin, you will need to import it into your own hosted repository.  
 
-## Branching
+## Branching Strategy
 Create your own branch based on master.  
 Name it test/{YourFullName}.  
-Do all work in your own branch.  
+Do all work in this branch.  
 
 ## Interfaces
 Create an interface for the Logger class.  
@@ -11,7 +13,7 @@ Update the logger class to implement the interface.
 Add a new method to the logger which takes a list of strings & writes them as a CSV.  
 Create a new implementation of the logger class.  
 * The LogMessage method should include a timestamp.  
-* The other methods method should not change.  
+* The other methods should not change.  
 
 ## Dependency Injection
 Alter the Program code to implement dependency injection for the Logger.  
@@ -42,4 +44,4 @@ Create an example YAML build file for the project. It should:
 * Run your unit tests.  
 
 ## Finish
-Don't forget to commit your work to your branch!  
+Please let us know where you have hosted your solution!
