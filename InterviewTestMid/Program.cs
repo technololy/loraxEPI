@@ -29,6 +29,8 @@ namespace InterviewTestMid
             {
               _logger.WriteToCsv(item.Materials.Select(x => x.Material.LookDesc).ToList());
             }
+
+            foilListData.FirstOrDefault().PartWeight.Value = 22;
             _logger.WriteLogMessage("Finished doing some JSON tasks.");
         }
     }
