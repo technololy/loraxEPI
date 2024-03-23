@@ -1,20 +1,35 @@
-﻿namespace InterviewTestMid
+﻿using InterviewTestMid.Data;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Linq;
+
+namespace InterviewTestMid
 {
     internal class Program
     {
-        public Program()
+        private readonly ILogger _logger;
+        public Program(ILogger logger)
         {
             DoWork();
+            _logger = logger;
         }
-
         private void DoWork()
         {
-            Logger Log = new ();
-            Log.WriteLogMessage("Doing some JSON tasks...");
+            _logger.WriteLogMessage("Doing some JSON tasks...");
 
             //Do JSON tasks here.
-
-            Log.WriteLogMessage("Finished doing some JSON tasks.");
+            var sampleData = File.ReadAllText("Data/SampleData.json");
+            var sampleJsonData = JsonSerializer.Deserialize<SampleJsonData>(sampleData);
+            var foilListData = sampleJsonData?.SampleData?.Where(x => x.PartDesc == "FOIL");
+            if (foilListData == null)
+            {
+                return;
+            }
+            foreach (var item in foilListData)
+            {
+              _logger.WriteToCsv(item.Materials.Select(x => x.Material.LookDesc).ToList());
+            }
+            _logger.WriteLogMessage("Finished doing some JSON tasks.");
         }
     }
 }
