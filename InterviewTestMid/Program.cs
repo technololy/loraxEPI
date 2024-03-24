@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using System.Linq;
 using System.Xml;
 using System.Text.Json.Serialization.Metadata;
+using System.Text;
 
 namespace InterviewTestMid
 {
@@ -40,8 +41,14 @@ namespace InterviewTestMid
         private void SaveSerializedModifiedToJsonFile()
         {
             var partToSerialize = JsonSerializer.Serialize(SampleModifiedData);
-
-            File.WriteAllText("SampleModifiedData.json", partToSerialize);
+            var fileName = "Data/SampleModifiedData.json";
+            if (File.Exists(fileName))
+            {
+                return;
+            }
+            using FileStream fs = File.Create(fileName);
+            byte[] data = new UTF8Encoding(true).GetBytes(partToSerialize);
+            fs.Write(data, 0, data.Length);
         }
 
         private void ModifyPartWeight()
