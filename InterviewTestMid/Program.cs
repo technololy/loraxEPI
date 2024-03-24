@@ -46,9 +46,7 @@ namespace InterviewTestMid
             {
                 return;
             }
-            using FileStream fs = File.Create(fileName);
-            byte[] data = new UTF8Encoding(true).GetBytes(partToSerialize);
-            fs.Write(data, 0, data.Length);
+            File.WriteAllText(fileName,partToSerialize);
         }
 
         private void ModifyPartWeight()
