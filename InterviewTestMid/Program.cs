@@ -46,7 +46,12 @@ namespace InterviewTestMid
 
         private void ModifyPartWeight()
         {
-            SampleModifiedData = SampleFoilData?.FirstOrDefault();
+            var sampleModifiedData = SampleFoilData?.FirstOrDefault();
+            if (sampleModifiedData != null)
+            {
+                var serializedSampleModifiedData = JsonSerializer.Serialize(sampleModifiedData);
+                SampleModifiedData = JsonSerializer.Deserialize<SampleDataModel>(serializedSampleModifiedData);
+            }
             if (SampleModifiedData != null)
             {
                 SampleModifiedData.PartWeight.Value = 222;
@@ -55,6 +60,10 @@ namespace InterviewTestMid
 
         private void LogMaterialSection()
         {
+            if (SampleFoilData == null)
+            {
+                return;
+            }
             foreach (var item in SampleFoilData)
             {
                 _logger.WriteToCsv(item.Materials.Select(x => x.Material.LookDesc).ToList());
