@@ -33,15 +33,15 @@ namespace InterviewTestMid
             LogMaterialSection();
 
             ModifyPartWeight();
-            SaveSerializedModifiedToJson();
+            SaveSerializedModifiedToJsonFile();
             _logger.WriteLogMessage("Finished doing some JSON tasks.");
         }
 
-        private void SaveSerializedModifiedToJson()
+        private void SaveSerializedModifiedToJsonFile()
         {
             var partToSerialize = JsonSerializer.Serialize(SampleModifiedData);
 
-            File.WriteAllText("Data/SampleModifiedData.json", partToSerialize);
+            File.WriteAllText("SampleModifiedData.json", partToSerialize);
         }
 
         private void ModifyPartWeight()
