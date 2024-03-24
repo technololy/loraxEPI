@@ -24,11 +24,11 @@
         "LookId": 3,
         "LookNbr": "Op",
         "LookDesc": "Opaque"
-      },
+      }
     },
 	"PartWeight": {
         "UoM": 10,
-        "Value": 0.50000000,
+        "Value": 0.50000000
     },
     "ConversionsApplied": false,
     "Materials": [
@@ -71,7 +71,7 @@
     },
 	"PartWeight": {
         "UoM": 10,
-        "Value": 1.00000000,
+        "Value": 1.00000000
     },
     "ConversionsApplied": false,
     "Materials": [
@@ -109,7 +109,7 @@
     },
 	"PartWeight": {
         "UoM": 10,
-        "Value": 1.00000000,
+        "Value": 1.00000000
     },
     "ConversionsApplied": false,
     "Materials": [

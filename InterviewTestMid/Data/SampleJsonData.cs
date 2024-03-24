@@ -20,7 +20,7 @@ namespace InterviewTestMid.Data
         public Meta Meta { get; set; }
         public Partweight PartWeight { get; set; }
         public bool ConversionsApplied { get; set; }
-        public Material[] Materials { get; set; }
+        public Materials[] Materials { get; set; }
     }
 
     public class Meta
@@ -66,16 +66,16 @@ namespace InterviewTestMid.Data
         public float Value { get; set; }
     }
 
-    public class Material
+    public class Materials
     {
-        public Material1 Material { get; set; }
+        public Material Material { get; set; }
         public float Percentage { get; set; }
         public bool MatrIsBarrier { get; set; }
         public bool MatrIsDensifier { get; set; }
         public bool MatrIsOpacifier { get; set; }
     }
 
-    public class Material1
+    public class Material
     {
         public int LookId { get; set; }
         public string LookNbr { get; set; }
