@@ -94,7 +94,7 @@
         "LookId": 2,
         "LookNbr": "PACK",
         "LookDesc": "Packaging",
-	    "LookExtra": "Secondary Packaging"
+        "LookExtra": "Secondary Packaging"
       },
       "PartMasterType": {
         "LookId": 520,
@@ -105,6 +105,11 @@
         "LookId": 3,
         "LookNbr": "Op",
         "LookDesc": "Opaque"
+      },
+      "PartColour": {
+        "LookId": 3,
+        "LookNbr": "Bl",
+        "LookDesc": "Blue"
       }
     },
 	"PartWeight": {
